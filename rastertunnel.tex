@@ -1,0 +1,218 @@
+\documentclass[12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{dsfont}
+\usepackage{physics}
+\usepackage{lmodern}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{listings, color}
+\usepackage[labelfont=bf]{caption}
+\usepackage{titling}
+
+\lstset{basicstyle=\scriptsize} %Quellcode mit Umlauten und ganz klein
+\lstset{literate=
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}2
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+
+
+%Geometrie----------------------------------------------------------------------------------------------------------
+
+\geometry{a4paper, top=25mm, left=15mm, right=15mm, bottom=25mm,headsep=10mm, footskip=10mm}
+\pagestyle{fancy}
+\setlength{\parindent}{0pt} %Zeileneinrückung
+
+\fancyhf{} %Setzt voreingestellte Kopf-und Fußzeilen-Eigenschaften zurück
+
+\lhead{\nouppercase{\leftmark}}
+\chead{}
+\rhead{\thepage}
+
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\title{\vspace{0cm}{\Huge Fortgeschrittenen-Praktikum I:\\ \vspace{1cm} Rastertunnelmikroskop}}
+\author{Saskia Bondza\\Simon Stephan}
+\date{durchgeführt am 07. und 10.10.2016}
+
+\pretitle{%
+  \begin{center}
+  \LARGE
+  \includegraphics[width=6cm,]{figures/siegel}\\[\bigskipamount]
+}
+\posttitle{\end{center}}
+
+%neue Commands----------------------------------------------------------------------------------------------------------
+\newcommand{\nab}{\vec{\nabla}} %direkter Befehl mit Vektorpfeil
+\newcommand{\gra}[3][0.7]{
+	\begin{minipage}[h!]{\textwidth}
+		\centering
+		\includegraphics[width=#1\textwidth]{figures/#2.png}
+		\captionof{figure}{#3}
+	\end{minipage}
+	\vskip 30 pt
+}
+\newcommand{\graTwo}[4][0.49]{
+	\begin{minipage}[h!]{\textwidth}
+		\centering
+		\includegraphics[width=#1\textwidth]{figures/#2.png}
+		\includegraphics[width=#1\textwidth]{figures/#3.png}
+		\captionof{figure}{#4}
+	\end{minipage}
+	\vskip 30 pt
+}
+\newcommand{\graThree}[5][0.325]{
+	\begin{minipage}[h!]{\textwidth}
+		\centering
+		\includegraphics[width=#1\textwidth]{figures/#2.png}
+		\includegraphics[width=#1\textwidth]{figures/#3.png}
+		\includegraphics[width=#1\textwidth]{figures/#4.png}
+		\captionof{figure}{#5}
+	\end{minipage}
+	\vskip 30 pt
+}
+\newcommand{\del}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\code}[1]{\texttt{#1}}
+
+
+%Titel,Inhalt----------------------------------------------------------------------------------------------------------
+
+\begin{document}
+\pagenumbering{gobble} %verstecke Seitenzahl
+\maketitle
+\newpage
+
+\section*{Abstract}
+Das Rastertunnelmikroskop ist ein Bildgebungsinstrument zur Auflösung von atomaren Strukturen. Mit einem optischen Mikroskop lassen sich aufgrund der Wellenlängen des sichtbaren Lichtes nur Auflösungen bis ca. 200nm erreichen. Da Atomdurchmesser sich jedoch in der Größenordnung von $x=1\,\mathrm{\AA}=0.1\,\mathrm{nm}$ befinden, bedarf es hierzu einer deutlich besseren Auflösung. Das Rastertunnelmikroskop erreicht diese (im Bereich von $1\,\mathrm{\AA}$) durch Abfahren der Oberfläche in kleinen Schritten mit einer Spitze und Messen des Abstands durch Ausnutzen des quantenmechanischen Tunneleffekts.\\
+
+Mit dem Rastertunnelmikroskop lassen sich nur leitende Materialien untersuchen, da die Messung über einen Tunnelstrom zwischen Probe und Spitze funktioniert. In diesem Versuch untersuchen wir mit Hilfe eines Rastertunnelmikroskops Graphit, Molybdändisulfid und Gold. Aus den Bildern für Graphit berechnen wir die Gitterkonstante des Graphitkristalls. Die weiteren Ergebnisse werten wir qualitativ aus, um die Funktionsweise des Rastertunnelmikroskops zu verstehen. Außerdem untersuchen wir die Bilder auf Artefakte, die durch störende Einflüsse von außen oder Verunreinigungen und Fehler der Spitze oder des Materials entstehen.\\
+
+Als Ergebnis für die Gitterkonstante von Graphit erhielten wir:
+\begin{align*}
+	a=\text{HIER ERGEBNIS EINSETZEN}
+\end{align*}
+
+\newpage
+
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+
+%Schreiben----------------------------------------------------------------------------------------------------------
+\pagenumbering{arabic} %verstecke Seitenzahl
+\section{Einleitung}
+
+Das Rastertunnelmikroskop dient der Mikroskopie von leitenden Materialien bei atomarer Auflösung. Diese wird erreicht, indem eine Messspitze bis auf wenige $\mathrm{\AA}$ Abstand an die Probe bewegt und zwischen Spitze und Probe eine Spannung angelegt wird. Durch den quantenmechanischen Tunneleffekt fließt nun zwischen Spitze und Probe ein abstandsabhängiger Tunnelstrom. Die Spitze wird nun in einem Raster über die Probe bewegt und die Probe dadurch abgetastet.\\
+
+In diesem Versuch untersuchen wir die Eigenschaften eines Rastertunnelmikroskops, indem wir damit drei Proben (Graphit, Molybdändisulfid und Gold) vermessen. Ein Rastertunnelmikroskop erreicht Auflösungen von bis zu ca. $1\,\mathrm{\AA}$, womit sich bei Optimalbedingungen die Atomstruktur dieser Materialien auflösen lässt. Wir versuchen in diesem Versuch, möglichst gute Spitzen herzustellen und die Parameter des Rastertunnelmikroskops optimal einzustellen, um möglichst gute Bilder der Proben zu erhalten.
+
+
+
+\newpage
+\section{Theoretische Grundlagen}
+
+%Dieser Teil orientiert sich weitgehendst an \cite{staat}.
+
+\subsection{Quantenmechanischer Tunneleffekt}\label{tunnel}
+
+Wenn ein Teilchen der Energie $E$ auf eine Potentialbarriere trifft mit dem Potential $E_0$ mit $E_0>E$, wird das Teilchen im klassischen Modell komplett reflektiert und kann die Potentialbarriere nicht überwinden. In der Quantenmechanik ist der Ort des Teilchens nun nicht mehr eindeutig festgelegt, sondern wird durch eine Aufenthaltswahrscheinlichkeit $|\Psi|^2$ beschrieben. Die Wellenfunktion $\Psi$, welche die Aufenthaltswahrscheinlichkeit festlegt, wird für ein freies Teilchen im Allgemeinen durch eine Sinus-Funktion beschrieben. Die Aufenthaltswahrscheinlichkeit wird nun am Rand der Potentialbarriere nicht komplett null, sondern nimmt exponentiell ab. Bei genügend kleiner Breite $d$ der Potentialstufe besteht nun noch eine endliche Aufenthaltswahrscheinlichkeit für die Teilchen auf der anderen Seite der Potentialbarriere. Dies bedeutet, dass die Teilchen mit einer gewissen Wahrscheinlichkeitsdichte die Potentialbarriere überwinden können. Diesen Effekt nennt man Tunneleffekt.
+
+\gra{tunneleffekt}{Tunneln eines Teilchens mit Wellenfunktion \textcolor{red}{\textbf{$\Psi$}} am Rechteckpotential \textcolor{blue}{\textbf{$E_0$}} der Breite $d$}
+
+\subsection{Tunnelstrom}
+
+Wird die Spitze des Rastertunnelmikroskops in einen Abstand von $d\approx1\,nm$ zur Probe gebracht und eine Spannung zwischen Spitze und Probe angelegt, fließt durch den quantenmechanischen Tunneleffekt nun ein Tunnelstrom zwischen Spitze und Probe, der exponentiell vom Abstand $d$ abhängt.
+
+\newpage
+\section{Versuchsaufbau \label{VA}}
+
+
+
+\newpage
+\section{Durchführung}\label{durchfuehrung}
+
+
+\newpage
+\section{Auswertung}
+\newpage
+\section{Zusammenfassung und Diskussion}
+\label{diskussion}
+
+\newpage
+\section{Anhang}
+
+\subsection{Grafiken}\label{bilder}
+
+
+
+
+\subsection{Tabellen}\label{tabellen}
+
+
+%\newpage
+%\subsection{Quellcode (MATLAB)}
+%\lstinputlisting[language=MATLAB]{Rohdaten/alpha.m}
+\clearpage
+\subsection{Quellcode (R)}
+%\subsubsection{\code{auswertung.R}}\label{auswertungR}
+%\lstinputlisting[language=R]{r-files/auswertung.R}
+
+%\subsection{Laborheft}\label{laborbuch}
+%\begin{minipage}{\textwidth}
+%	\centering
+%	\includegraphics[width=0.9\textwidth]{laborbuch/laborbuch6.pdf}
+%\end{minipage}
+\newpage
+\listoffigures
+
+%Literatur----------------------------------------------------------------------------------------------------------
+
+%\cite{les}
+\newpage
+\thispagestyle{empty}
+\begin{thebibliography}{9}
+
+%\bibitem{staat}
+%  Tobijas Kotyk,
+%  \emph{Versuche zur Radioaktivität im Physikalischen Fortgeschrittenen Praktikum an der Albert-Ludwigs-Universität Freiburg},
+%  Albert-Ludwigs-Universität, Freiburg,
+%  2005
+  
+
+  
+%\bibitem{molmasse}
+%  \emph{http://www.convertunits.com/molarmass/<ELEMENTNAME AUF ENGLISCH>}, Stand 28.09.2015
+  
+
+\bibitem{anleitung}
+M. Köhli, S. Röttinger,
+\emph{Versuchsanleitung Fortgeschrittenen Praktikum: Rastertunnelmikroskop},
+Albert-Ludwigs-Universität Freiburg,
+2013
+
+\bibitem{staat}
+Dieter Ritzmann,
+\emph{Einrichtung eines Versuchs: Rastertunnelmikroskopie für das Fortgeschrittenenpraktikum 2},
+Albert-Ludwigs-Universität Freiburg,
+1995
+
+
+\end{thebibliography}
+
+\end{document}
