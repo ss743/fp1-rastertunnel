@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,listof=totoc]{scrartcl}
 
 \usepackage{fancyhdr}
 \usepackage{geometry}
@@ -77,13 +77,25 @@
 	\end{minipage}
 	\vskip 30 pt
 }
-\newcommand{\graThree}[5][0.325]{
+\newcommand{\graThree}[5][0.49]{
 	\begin{minipage}[h!]{\textwidth}
 		\centering
 		\includegraphics[width=#1\textwidth]{figures/#2.png}
-		\includegraphics[width=#1\textwidth]{figures/#3.png}
+		\includegraphics[width=#1\textwidth]{figures/#3.png}\newline
 		\includegraphics[width=#1\textwidth]{figures/#4.png}
 		\captionof{figure}{#5}
+	\end{minipage}
+	\vskip 30 pt
+}
+\newcommand{\graFive}[7][0.49]{
+	\begin{minipage}[h!]{\textwidth}
+		\centering
+		\includegraphics[width=#1\textwidth]{figures/#2.png}
+		\includegraphics[width=#1\textwidth]{figures/#3.png}\newline
+		\includegraphics[width=#1\textwidth]{figures/#4.png}
+		\includegraphics[width=#1\textwidth]{figures/#5.png}
+		\includegraphics[width=#1\textwidth]{figures/#6.png}\newline
+		\captionof{figure}{#7}
 	\end{minipage}
 	\vskip 30 pt
 }
@@ -101,7 +113,9 @@
 \section*{Abstract}
 Das Rastertunnelmikroskop ist ein Bildgebungsinstrument zur Auflösung von atomaren Strukturen. Mit einem optischen Mikroskop lassen sich aufgrund der Wellenlängen des sichtbaren Lichtes nur Auflösungen bis ca. 200nm erreichen. Da Atomdurchmesser sich jedoch in der Größenordnung von $x=1\,\mathrm{\AA}=0.1\,\mathrm{nm}$ befinden, bedarf es hierzu einer deutlich besseren Auflösung. Das Rastertunnelmikroskop erreicht diese (im Bereich von $1\,\mathrm{\AA}$) durch Abfahren der Oberfläche in kleinen Schritten mit einer Spitze und Messen des Abstands durch Ausnutzen des quantenmechanischen Tunneleffekts.\\
 
-Mit dem Rastertunnelmikroskop lassen sich nur leitende Materialien untersuchen, da die Messung über einen Tunnelstrom zwischen Probe und Spitze funktioniert. In diesem Versuch untersuchen wir mit Hilfe eines Rastertunnelmikroskops Graphit, Molybdändisulfid und Gold. Aus den Bildern für Graphit berechnen wir die Gitterkonstante des Graphitkristalls. Die weiteren Ergebnisse werten wir qualitativ aus, um die Funktionsweise des Rastertunnelmikroskops zu verstehen. Außerdem untersuchen wir die Bilder auf Artefakte, die durch störende Einflüsse von außen oder Verunreinigungen und Fehler der Spitze oder des Materials entstehen.\\
+Mit dem Rastertunnelmikroskop lassen sich nur leitende Materialien untersuchen, da die Messung über einen Tunnelstrom zwischen Probe und Spitze funktioniert. Mit dem Rastertunnelmikroskop "`sieht"' man die Dichte der leitenden Elektronen eines Materials. In diesem Versuch wollen wir mit Hilfe eines Rastertunnelmikroskops Graphit, Molybdändisulfid und Gold untersuchen. Aus den Bildern für Graphit berechnen wir die Gitterkonstante des Graphitkristalls. Die weiteren Ergebnisse werten wir qualitativ aus, um die Funktionsweise des Rastertunnelmikroskops zu verstehen. Außerdem untersuchen wir die Bilder auf Artefakte, die durch störende Einflüsse von außen oder Verunreinigungen und Fehler der Spitze oder des Materials entstehen.\\
+
+Zum Untersuchen der Proben stellen wir die Messspitzen aus Platin-Iridium-Draht her. Es gelangen uns zwei Spitzen, mit denen wir die atomare Struktur von Graphit messen konnten. Allerdings konnten wir damit in Molybdän keine Struktur erkennen, weshalb eine Messung von Gold uns nicht möglich war.\\
 
 Als Ergebnis für die Gitterkonstante von Graphit erhielten wir:
 \begin{align*}
@@ -127,13 +141,13 @@ In diesem Versuch untersuchen wir die Eigenschaften eines Rastertunnelmikroskops
 \newpage
 \section{Theoretische Grundlagen}
 
-%Dieser Teil orientiert sich weitgehendst an \cite{staat}.
+Zum Verstehen dieses Versuchs empfiehlt es sich, gewisse theoretische Grundlagen verstanden zu haben. Im Folgenden finden sich die wichtigsten Grundlagen für diesen Versuch. Dieser Teil orientiert sich weitgehendst an \cite{staat}.
 
 \subsection{Quantenmechanischer Tunneleffekt}\label{tunnel}
 
-Wenn ein Teilchen der Energie $E$ auf eine Potentialbarriere trifft mit dem Potential $E_0$ mit $E_0>E$, wird das Teilchen im klassischen Modell komplett reflektiert und kann die Potentialbarriere nicht überwinden. In der Quantenmechanik ist der Ort des Teilchens nun nicht mehr eindeutig festgelegt, sondern wird durch eine Aufenthaltswahrscheinlichkeit $|\Psi|^2$ beschrieben. Die Wellenfunktion $\Psi$, welche die Aufenthaltswahrscheinlichkeit festlegt, wird für ein freies Teilchen im Allgemeinen durch eine Sinus-Funktion beschrieben. Die Aufenthaltswahrscheinlichkeit wird nun am Rand der Potentialbarriere nicht komplett null, sondern nimmt exponentiell ab. Bei genügend kleiner Breite $d$ der Potentialstufe besteht nun noch eine endliche Aufenthaltswahrscheinlichkeit für die Teilchen auf der anderen Seite der Potentialbarriere. Dies bedeutet, dass die Teilchen mit einer gewissen Wahrscheinlichkeitsdichte die Potentialbarriere überwinden können. Diesen Effekt nennt man Tunneleffekt.
+Wenn ein Teilchen der Energie $E$ auf eine Potentialbarriere trifft mit dem Potential $E_0$ mit $E_0>E$, wird das Teilchen im klassischen Modell komplett reflektiert und kann die Potentialbarriere nicht überwinden. In der Quantenmechanik ist der Ort des Teilchens nun nicht mehr eindeutig festgelegt, sondern wird durch eine Aufenthaltswahrscheinlichkeit $|\Psi|^2$ beschrieben. Die Wellenfunktion $\Psi$, welche die Aufenthaltswahrscheinlichkeit festlegt, wird für ein freies Teilchen im Allgemeinen durch eine Sinus-Funktion beschrieben. Die Aufenthaltswahrscheinlichkeit wird nun am Rand der Potentialbarriere nicht komplett null, sondern nimmt exponentiell ab. Bei genügend kleiner Breite $d$ der Potentialstufe besteht nun noch eine endliche Aufenthaltswahrscheinlichkeit für die Teilchen auf der anderen Seite der Potentialbarriere. Dies bedeutet, dass die Teilchen mit einer gewissen Wahrscheinlichkeitsdichte die Potentialbarriere überwinden können. Diesen Effekt nennt man Tunneleffekt. \textsuperscript{\cite{demtroeder3}}
 
-\gra{tunneleffekt}{Tunneln eines Teilchens mit Wellenfunktion \textcolor{red}{\textbf{$\Psi$}} am Rechteckpotential \textcolor{blue}{\textbf{$E_0$}} der Breite $d$}
+\gra{tunneleffekt}{Tunneln eines Teilchens mit Wellenfunktion \textcolor{red}{\textbf{$\Psi$}} am Rechteckpotential \textcolor{blue}{\textbf{$E_0$}} der Breite $d$. (Selbsterstellte Grafik, orientiert an \cite{demtroeder3})}
 
 \subsection{Tunnelstrom}
 
@@ -141,15 +155,18 @@ Wird die Spitze des Rastertunnelmikroskops in einen Abstand von $d\approx1\,nm$ 
 
 \subsection{Piezoelektrischer Effekt}\label{piezo}
 
-In piezoelektrischen Kristallen sind die Ionen so angeordnet, dass die Gesamtladung $Q=0$ ist. Wenn der Kristall deformiert wird, verschieben sich die Ionen und die Ladungsschwerpunkte im Kristall. Dadurch entsteht eine Spannung zwischen beiden Seiten des Kristalls, die linear von der deformierenden Kraft abhängt. Dies nennt sich piezoelektrischer Effekt.\\
+In piezoelektrischen Kristallen sind die Ionen so angeordnet, dass die Gesamtladung $Q=0$ ist. Wenn der Kristall deformiert wird, verschieben sich die Ionen und die Ladungsschwerpunkte im Kristall. Dadurch entsteht eine Spannung zwischen beiden Seiten des Kristalls, die linear von der deformierenden Kraft abhängt (siehe Abbildung \ref{piezobild}). Dies nennt sich piezoelektrischer Effekt.\\
+
+\gra[0.6]{piezo}{Veranschaulichung des piezoelektrischen Effekts\textsuperscript{\cite{piezo}}\label{piezobild}} 
 
 Ebenso gibt es den inversen piezoelektrischen Effekt. Eine von außen angelegte Spannung verändert die Anordnung der Ionen und bewirkt so eine Deformation des Kristalls. Durch die Spannung kann der Kristall ausgedehnt oder gestaucht werden.
 
 \subsection{Funktionsweise des Rastertunnelmikroskops}
 
-\gra{rtm}{Rastertunnelmikroskop\label{rtm}}
+\label{funktionsweise}
+\gra{rtm}{Rastertunnelmikroskop\label{rtm}\textsuperscript{\cite{anleitung}}}
 
-Das Rastertunnelmikroskop funktioniert über eine Platin-Iridium-Spitze, welche über ein Piezo-Element (siehe Kapitel \ref{piezo}) in $z$-Richtung bis auf wenige $\mathrm{\AA}$ an die Probe angenähert wird (siehe Abbildung \ref{rtm}). Zwischen Spitze und Probe wird eine Spannung angelegt, welche einen Tunnelstrom zwischen Spitze und Probe erzeugt (siehe Kapitel \ref{tunnelstrom}). Aus der Stärke des Tunnelstroms kann nun die Entfernung zwischen Probe und Spitze bestimmt werden. Mit zwei weiteren Piezo-Elementen in $x$- und $y$-Richtung wird die Spitze schrittweise über die Probe bewegt und damit das Oberflächenprofil der Probe aufgenommen.
+Das Rastertunnelmikroskop funktioniert über eine Platin-Iridium-Spitze, welche über ein Piezo-Element (siehe Kapitel \ref{piezo}) in $z$-Richtung bis auf wenige $\mathrm{\AA}$ an die Probe angenähert wird (siehe Abbildung \ref{rtm}). Zwischen Spitze und Probe wird eine Spannung angelegt, welche einen Tunnelstrom zwischen Spitze und Probe erzeugt (siehe Kapitel \ref{tunnelstrom}). Aus der Stärke des Tunnelstroms kann nun die Entfernung zwischen Probe und Spitze bestimmt werden. Mit zwei weiteren Piezo-Elementen in $x$- und $y$-Richtung wird die Spitze schrittweise über die Probe bewegt und damit das Oberflächenprofil der Probe aufgenommen. Das Rastertunnelmikroskop besitzt außerdem einen Schrittmotor, welcher die Entfernung zwischen Spitze und Probe in groben Schritten verändern kann.
 
 \paragraph{Constant Height Mode}
 
@@ -174,9 +191,9 @@ Halbmetalle gehören zu den Halbleitern, haben jedoch eine sehr kleine Bandlück
 \subsection{Materialien unter dem Rastertunnelmikroskop}
 
 \subsubsection{Graphit}
-\gra[0.25]{graphit}{Kristallstruktur von Graphit\textsuperscript{\cite{anleitung}}\label{graphitstruktur}}
+\gra{graphit}{Kristallstruktur von Graphit\textsuperscript{\cite{anleitung}}\label{graphitstruktur}}
 
-Graphit ist ein Halbmetall und besitzt eine hexagonale Kristallstruktur in mehreren Ebenen, wobei die Ebenen zueinander versetzt sind (siehe Abbildung \ref{graphitstruktur}).
+Graphit ist ein Halbmetall und besitzt eine hexagonale Kristallstruktur in mehreren Ebenen, wobei die Ebenen zueinander versetzt sind (siehe Abbildung \ref{graphitstruktur}). Dabei werden die Elektronen, die ein direkt benachbartes Atom in der darunterliegenden Ebene haben, als $\alpha$-Atome bezeichnet und die übrigen als $\beta$-Atome. Da die Elektronen eines $\alpha$-Atoms auch mit dem darunterliegenden $\alpha$-Atom koppeln, tragen hauptsächlich die Elektronen der $\beta$-Atome zum Tunnelstrom bei. Deshalb sind im Wesentlichen nur die $\beta$-Atome im Elektronenmikroskop sichtbar.
 
 \subsubsection{Molybdändisulfid}
 \gra{molybdaen}{Struktur von Molybdändisulfid\textsuperscript{\cite{mol1}\cite{mol2}\label{molybdaen}}}
@@ -184,18 +201,23 @@ Molybdändisulfid ($\mathrm{MoS}_2$) hat die in Abbildung \ref{molybdaen} gezeig
 
 \subsubsection{Gold}
 \gra{gold}{Kristallstruktur von Gold\textsuperscript{\cite{kittel}\label{gold}}}
-Gold ist ein Metall und ist also immer leitend. Die Kristallstruktur ist in Abbuldig \ref{gold} zu sehen. Allerdings ist Gold unter dem Rastertunnelmikroskop nur sehr schwer zu erkennen, da es in Luft sehr leicht verunreinigt wird. Um gute Bilder von Gold zu erhalten, müsste man das Rastertunnelmikroskop im Vakuum betreiben, was in diesem Versuch jedoch nicht gemacht wird.
+Gold ist ein Metall und ist also immer leitend. Die Kristallstruktur ist in Abbildung \ref{gold} zu sehen. Allerdings ist Gold unter dem Rastertunnelmikroskop nur sehr schwer zu erkennen, da es in Luft sehr leicht verunreinigt wird. Um gute Bilder von Gold zu erhalten, müsste man das Rastertunnelmikroskop im Vakuum betreiben, was in diesem Versuch jedoch nicht gemacht wird.
 
 
 \newpage
 \section{Versuchsaufbau}\label{aufbau}
-
-
+\gra{aufbau}{Schematische Zeichnung des Versuchsaufbaus\textsuperscript{\cite{demtroeder3}}}
+Der Versuch besteht aus einem Rastertunnelmikroskop, der dazugehörigen Steuerungseinheit und einem Computer. Das Rastertunnelmikroskop selbst besteht, wie in Kapitel \ref{funktionsweise} beschrieben, aus drei Piezo-Elementen und der Spitze. Außerdem befindet sich über dem Rastertunnelmikroskop ein Glasdeckel mit Lupe, um die Spitze beobachten zu können. Auf dem Computer läuft die Steuerungssoftware \emph{EasyScan 2} des Rastertunnelmikroskops.
 
 \newpage
 \section{Durchführung}\label{durchfuehrung}
+Um ein Bild mit dem Rastertunnelmikroskop aufzeichnen zu können, benötigen wir eine Messspitze. Diese stellen wir aus Platin-Iridium-Draht her. Dazu benutzen wir eine Zange, mit der wir den Draht festhalten und eine weitere, mit der wir in einem möglich spitzen Winkel den Draht abreißen, um eine möglichst feine Spitze herzustellen. Da es mit diesem Verfahren schwierig ist, eine optimale Spitze herzustellen, erwarten wir viele Artefakte, z.B. durch schlechte Spitzen. Ebenso tragen Verschmutzungen der Spitze oder der Probe zu möglicher Artefaktbildung bei.\\
 
+Die so hergestellte Messspitze und die zu betrachtende Probe legen wir in das Rastertunnelmikroskop ein. Wir beginnen mit der Graphitprobe, da diese am einfachsten zu messen ist. Nun führen wir die Probe mit dem Schrittmotor so nah an die Spitze heran, wie man mit Hilfe der Lupe noch erkennen kann, dass die Spitze die Probe nicht berührt. Wenn die Spitze die Probe berührt wird sie vermutlich durch den Kontakt zerstört. Durch das Computerprogramm erfolgt nun die Feinannäherung der Spitze an die Probe. \\
 
+Ist die Feinnäherung erfolgt, beginnt das Programm, die Probe mit der Spitze abzurastern und das Oberflächenprofil zu erstellen. Die Bildgröße lässt sich hierbei einstellen. Zu Anfang stellen wir die Bildgröße immer auf $500\,$nm Breite und Höhe. Dann suchen wir uns einen homogenen Bereich  aus und nehmen diesen auf. Wenn kein farbiges Bild erzeugt wird, hat die Feinannäherung keinen Erfolg gehabt, was möglicherweise an der Qualität der Spitze liegt. Dann probieren wir die Feinannäherung erneut und verwerfen nach einigen Fehlversuchen die Messspitze.\\
+
+Wir wiederholen dieses Verfahren so oft, bis wir die Atomstruktur von Graphit erkennen können. Zur Verbesserung der Bilder lassen sich die Einstellungen der Steuerelektronik anpassen. Wenn wir nun ein gutes Bild für Graphit erhalten haben, tauschen wir die Graphitprobe durch Molybdändisulfid und anschließend Gold aus und versuchen, für diese Materialien eine atomare Auflösung zu erhalten.
 \newpage
 \section{Auswertung}
 
@@ -219,22 +241,22 @@ Da wir bereits für Molybdändisulfid keine atomare Auflösung erreichen konnten
 \section{Zusammenfassung und Diskussion}
 \label{diskussion}
 
-\newpage
-\section{Anhang}
+%\newpage
+%\section{Anhang}
 
-\subsection{Grafiken}\label{bilder}
-
-
+%\subsection{Grafiken}\label{bilder}
 
 
-\subsection{Tabellen}\label{tabellen}
+
+
+%\subsection{Tabellen}\label{tabellen}
 
 
 %\newpage
 %\subsection{Quellcode (MATLAB)}
 %\lstinputlisting[language=MATLAB]{Rohdaten/alpha.m}
-\clearpage
-\subsection{Quellcode (R)}
+%\clearpage
+%\subsection{Quellcode (R)}
 %\subsubsection{\code{auswertung.R}}\label{auswertungR}
 %\lstinputlisting[language=R]{r-files/auswertung.R}
 
@@ -299,6 +321,9 @@ Ch. Kittel,\\
 Oldenbourg Verlag München,\\
 14. Auflage, 2006
 
+\bibitem{piezo}
+\emph{http://www.piezoeffekt.de/2crystals.php},\\
+Stand: 13.10.2016
 
 \end{thebibliography}
 
