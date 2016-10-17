@@ -190,10 +190,10 @@ Halbmetalle gehören zu den Halbleitern, haben jedoch eine sehr kleine Bandlück
 
 \subsection{Materialien unter dem Rastertunnelmikroskop}
 
-\subsubsection{Graphit}
+\subsubsection{Graphit}\label{graphit}
 \gra{graphit}{Kristallstruktur von Graphit\textsuperscript{\cite{anleitung}}\label{graphitstruktur}}
 
-Graphit ist ein Halbmetall und besitzt eine hexagonale Kristallstruktur in mehreren Ebenen, wobei die Ebenen zueinander versetzt sind (siehe Abbildung \ref{graphitstruktur}). Dabei werden die Elektronen, die ein direkt benachbartes Atom in der darunterliegenden Ebene haben, als $\alpha$-Atome bezeichnet und die übrigen als $\beta$-Atome. Da die Elektronen eines $\alpha$-Atoms auch mit dem darunterliegenden $\alpha$-Atom koppeln, tragen hauptsächlich die Elektronen der $\beta$-Atome zum Tunnelstrom bei. Deshalb sind im Wesentlichen nur die $\beta$-Atome im Elektronenmikroskop sichtbar.
+Graphit ist ein Halbmetall und besitzt eine hexagonale Kristallstruktur in mehreren Ebenen, wobei die Ebenen zueinander versetzt sind (siehe Abbildung \ref{graphitstruktur}). Dabei werden die Elektronen, die ein direkt benachbartes Atom in der darunterliegenden Ebene haben, als $\alpha$-Atome bezeichnet und die übrigen als $\beta$-Atome. Da die Elektronen eines $\alpha$-Atoms auch mit dem darunterliegenden $\alpha$-Atom koppeln, tragen hauptsächlich die Elektronen der $\beta$-Atome zum Tunnelstrom bei. Deshalb sind im Wesentlichen nur die $\beta$-Atome im Elektronenmikroskop sichtbar. Man beobachtet mit dem Rastertunnelmikroskop also nicht die Hexagonalstruktur, sondern eine Dreieckstruktur.
 
 \subsubsection{Molybdändisulfid}
 \gra{molybdaen}{Struktur von Molybdändisulfid\textsuperscript{\cite{mol1}\cite{mol2}\label{molybdaen}}}
@@ -389,6 +389,28 @@ In dieser Richtung entschieden wir uns für eine Linie mit lediglich vier Peaks,
 	\end{tabular}
 	\caption{Gauß-Peaks des diagonalen (links oben - rechts unten) Profils \label{GT2}}
 \end{table}
+
+\paragraph{Berechnung der Gitterkonstanten}
+
+Aus den gefitteten Peaks lässt sich nun die Gitterkonstante bestimmen. Dazu benutzen wir folgende Formel, wobei $N$ die Anzahl der Peaks auf der verwendeten Linie ist: 
+\begin{align*}
+	d&=\frac{\mu_{N}-\mu_1}{2}&s_d&=\frac{\sqrt{s_{\mu_N}^2+s_{\mu_1}^2}}{2}
+\end{align*}
+Den Fehler auf die Position der Peaks $s_{\mu}$ berechnen wir hier aus dem Fitparameter $\sigma$ des Gaußfits $s_{\mu}=\frac{\sigma}{2}$. Da wir nur die $\beta$-Atome sehen (siehe Kapitel \ref{graphit}), sind die Abstände zweier beobachteter Atome gleich der Gitterkonstante.
+
+Hierbei erzielten wir folgende Ergebnisse:
+\begin{align*}
+	d_{\text{horizontal}}&=3,26\pm0,14\,\AA\\
+	d_{\text{diagonal},1}&=2,8\pm0,9\,\AA\\
+	d_{\text{diagonal},2}&=2,0\pm0,4\,\AA\\
+\end{align*}
+
+Zum Auswerten der Daten mussten die Daten begradigt werden. Dies wurde mit dem Auswerteprogramm Gwyddion gemacht. Dabei verzerren sich jedoch möglicherweise die Abstände. Um den dadurch entstehenden Fehler zu verringern, berechnen wir aus den drei Ergebnissen für die Gitterkonstante den Mittelwert, um unser Endergebnis zu erhalten.\\
+
+Dabei erhalten wir folgenden Wert:
+\begin{align*}
+	d&=2,7\pm0,3\,\AA
+\end{align*}
 
 \subsection{Molybdändisulfid}
 
