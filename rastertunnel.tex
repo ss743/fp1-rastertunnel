@@ -225,9 +225,139 @@ Wir wiederholen dieses Verfahren so oft, bis wir die Atomstruktur von Graphit er
 
 \subsection{Artefakte}
 
+\subsubsection{Schwarze und weiße Ränder}
+
+Ein Artefakt, das wir häufig beobachteten waren schwarze bzw. weiße Ränder. Dabei ist ein weißer (bzw. schwarzer Rand) an der linken Seite der Topograpie der Scan-forward Richtung zu sehen, und ein schwarzer (bzw. weißer Rand) auf der rechten Seite der Topographie der Scan-backwards Richtung, wie z.B in Abbildung \ref{BW}.\\
+
+\gra[0.8]{Black-white-edge-Graphit38}{Schwarze und weiße Ränder durch Aufsammeln eines Teilchens \label{BW}}
+
+Dieser Effekt kommt zu Stande, wenn mit der Spitze ein Teilchen, z.B. ein Molekül aufgesammelt wurde. Ähnlich wie beim Hin- und Herziehen eines Stiftes über ein Papier, kippt dieses Teilchen bem Ändern der Scanrichtung um, sodass es kurzzeitig zu fehlerhaften Strömen kommt.
+Prinzipiell ist das aufgesammelte Teilchen nicht immer schlecht, manchmal führt erst dieses zu einer atomaren Auflösung. In der Forschung werden teilweise absichtlich Moleküle bestimmter Stoffe aufgesammelt um eine bessere Auflösung zu erhalten.
+Durch einen Cleaning Pulse kann versucht werden, die Spitze zu reinigen und das Teilchen "abzuschütteln". Es empfiehlt sich dann den Scanbereich zu wechseln, um dieses Teilchen nicht direkt wieder aufzusammeln.
+
+\subsubsection{Symmetrie}
+
+Auf einigen Aufnahmen konnten wir Achsensymmetrien feststellen, wobei die Symmetrieachse in der Mitte des Bildes liegt (siehe Abbildung ). Vermutlich kommen diese Symmetrien durch eine fehlerhafte Führung der Spitze zustande. Es liegt nahe anzunehmen, das die Spitze nach der Hälfte des Bildes in die andere Richtung zurück scannt. 
+
+\gra[0.6]{Symmetry-Graphit18}{Beispiel der beobachteten Symeetrien}
+
+Auffällig ist hierbei, dass wir diese Symmetrien nur auf großen Scalen beobachten konnten, also bei Bildern von 500 nm Auflösung. Das Problem bezüglich der Spitzenführung scheint also nur bei größeren abzutastenden Flächen zu entstehen.
+
+\subsubsection{Verzerrung \label{Scaling}}
+Ein anderes Artefakt, das wir auf einigen Aufnahmen beobachten konnten, ist eine gewisse Verzerrung bei den verschiedenen Scanrichtungen. In Abbildung \ref{Scal} ist klar zu erkennen, das einzelne Strukturen bei der Scanforward-Richtung andere Längen aufweisen als in der Aufnahme mit entgegengesetzter Scan-Richtung. So ist z.B. das am rechten Hand zu sehende kreisförmige Struktur im rechten Bild deutlich kleiner und nahezu kreisförmig wohingegen im rechten Bild eine längere ovale Struktur zu sehen ist.
+
+
+\gra[0.6]{Scaling-Graphit20}{Verzerrungen in den Aufnahmen \label{Scal} }
+
+Wir erklären uns diese Effekte durch einen nicht konstante Scangeschwindigkeit. Vermutlich ist die Geschwindigkeit mit der sich die Spitz über die Probe bewegt nicht immer konstant, sondern variiert teilweise, was zu einer solchen Verzerrung führen kann.
+
+\subsubsection{Nicht-weißes Rauschen}
+
+Während der Durchführung des Versuchs beobachteten wir außerdem öfters Rauschen. Einen dieser Störeffekte konnten wir als nicht-weißes Rauschen identifizieren und haben dieses analysiert und die Frequenz berechnet.
+
+\graThree{Graphit2}{Rauschen1-Bild-Graphit2}{Rauschen1-graph-Graphit2}{Nicht-weißes Rauschen \label{NWR}}
+
+In Abbildung \ref{NWR} ist links die urpsrüngliche Aufnahme dargestellt. In der Mitte sind die verschiedenen Linien entlang welcher wir das Profil auslesen abgebildet. Rechts sind man schließlich diese Profile. Wir wählen dabei drei verschiedene Linien an veschiedenen Stellen, um zu überprüfen ob es sich tatsächlich um ein Rauschen konstanter Frequenz handelt. Wir sehen rechts in Abbildung \ref{NWR}, das das Rauschen immer jeweils 17 Perioden (Anzahl der Perioden N) pro Linie hat, wir berrechnen also die Frequenz f bei einer Scangeschwindigkeit $v$ von 0.2sec/Linie:
+
+\begin{align*}
+f=\frac{N}{v}=85 Hz
+\end{align*}
+
+Eine Frequenz von 85 Hz ist sehr untypisch, erwartet hätten wir eine Frequenz von 50 Hz bzw. 60 Hz, die der Stromversorgung zugeordnet werden könnte. Recherche ergab, das einige Monitore mit einer Frequenz von 85 Hz laufen, ein Überprüfen der Einstellungen des im Versuch verwendeten Monitors ergab jedoch, das dieser mit 60 Hz betrieben wird. Wir können uns die Ursache dieses Rauschen also erst einmal nicht erklären. Möglich wäre, dass die Angabe der Scangeschwinidgkeit nicht stimmt. Wie in Abschnitt \ref{Scaling} erklärt, scheint diese Schwankungen zu unterliegen. Unter der Annahme einer fehlerhaften Scangeschwindigkeit, wäre das beobachtete Rauschen möglicherweise dann doch der Stromversorgung zuzurechnen. 
+
+\subsubsection{Mysteriöses Rauschen}
+\subsubsection{Fehlschlagen des Approach-Vorgangs}
+
+Ein weiteres Artefakt, das wir häufig beobachten konnten, war eine schwarz-weiße Topographie, die ensteht wenn ein Approach-Vorgang fehl schlägt, also z.B. die Spitze bei diesem Vorgang zerstört wird (siehe Abbildung \ref{AF})
+
+\gra[0.6]{Graphit4_Approach_fail}{Fehlschlagen eines Approach-Vorgangs \label{AF}}
+
+In einem solchen Fall kann der Approach-Vorgang wiederholt werden, wurde die Spitze allerdings tatsächlich zerstört hilft nur die Herstellung einer neuen Spitze.
+
 \subsection{Atomare Auflösung für Graphit}
 
+Wir konnten für Graphit mit zwei verschiedenen Spitzen atomare Auflösung erreichen. Mit einer ersten Spitze erhöhten wir den Auflösung schrittweise, sodass wir eine Reihe von Bildern mit klaren Strukturen bei verschiedenen Auflösungen erhielten (siehe Abbildung \ref{GA} )
 
+\graFive[0.35]{Graphit47nm}{Graphit20nm}{Graphit8nm}{Graphit3nm}{Graphit1nm}{Atomare Auflösung von Graphit bei verschiedenen Abständen \label{GA}}
+
+In Abbildung \ref{GA} ist dabei zu erkennen, dass besonders bei der ersten Aufnahme mit einer Auflösung von 47 nm noch Artefakte auftreten, die vermutlich durch Nachführschwierigkeiten auftreten oder tatsächlich durch ein Rauschen verursacht wurden.\\
+
+Mit einer zweiten Spitze erhielten wir eine noch bessere Auflösung. Wir nahmen hier Bilder mit einer Auflösung von 4 nm, 3nm und 1nm auf. Dies ist in Abbildung \ref{GA2} dargestellt.
+
+\vskip 20 pt
+\graThree{Graphit2-4nm}{Graphit2-3nm}{Graphit2-1nm}{Beste erreichte Auflösung für Graphit \label{GA2}}
+
+\subsubsection{Berechnung der Gitterkonstante}
+An Hand der Aufnahme aus diesem Set mit einer Auflösung von 2.5 nm berrechnen wir die Gitterkonstante von Graphit. Dazu verwenden wir das Programm Gwyddion.
+Dieses erlaubt es, Linien durch die erhaltenen Aufnahme zu legen, an der das Profil ausgelesen werden kann. An den Peaks fitten wir dann Gaußfits aus deren Position wir die Abstände der Atome und somit die Gitterkonstante berechnen können. Um Unregelmäßigkeiten der Gitterstruktur sowie Unregelmäßigkeiten die durch das Abtasten enstehen können auszugleichen, werten wir mit Hilfe von drei verschiedenen Profillinien aus: Einer horizontalen Linie sowie einer von links oben nach rechts unten verlaufenden Linie und einer von rechts oben nach links unten verlaufenden Linie.
+
+\paragraph{Horizontales Profil}
+
+In Abbildung \ref{HP} ist links die Linie eingezeichnet, entlang welcher das Profil ausgewertet wird. Dieses ist rechts mit den gefitteten Gaußfunktionen dargestellt. 
+\vskip 10 pt
+
+\graTwo[0.45]{Bild2D54}{Graphit-horizontal}{Horizontales Profil von Graphit \label{HP}}
+
+Die einzelnen Fits haben die Form:
+
+\begin{align*}
+f(x) = y_0 + A\cdot exp\left[ -\frac{(x-\mu)^2}{\sigma^2}\right] 
+\end{align*}
+
+Die Parameter der einzelnen Fits sind in Tabelle \ref{GT} dargestellt.
+Da der Parameter $y_0$ für die Auswertung keinerlei Relevanz hat, wird dieser nicht aufgelistet
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c|c|c}
+		Peak & A & $\mu$ & $\sigma$ \\ \hline
+		Peak 1 & $(42 \pm 6 )pm$ & $(0.167 \pm 0.002)nm$ & $(161\pm20) pm$\\
+		Peak 2 & $(57 \pm 19 )pm$ & $(0.5122 \pm 0.0019)nm$ & $(194\pm43) pm$\\
+		Peak 3 & $(34 \pm 4 )pm$ & $(0.848 \pm 0.002)nm$ & $(122\pm14) pm$\\
+		Peak 4 & $(29.4 \pm 1.8 )pm$ & $(1.155 \pm 0.003)nm$ & $(109\pm8) pm$\\
+		Peak 5 & $(32.4 \pm 1.6 )pm$ & $(1.503 \pm 0.003)nm$ & $(114\pm8) pm$\\
+		Peak 6 & $(22.6 \pm 1.9 )pm$ & $(1.793 \pm 0.003)nm$ & $(105\pm12) pm$\\
+		Peak 7 & $(27 \pm 3 )pm$ & $(2.125 \pm 0.004)nm$ & $(97\pm13) pm$\\
+	\end{tabular}
+	\caption{Gauß-Peaks des horizontalen Profils \label{GT}}
+\end{table}
+
+\paragraph{Diagonales Profil (links oben nach rechts unten)}
+
+Da Diagonal eine geringere Anzahl an Atomen gut erkennbar ist, deckt die hier gezogene Linie nur einen Teil des Ausschnitts ab, um noch ein erkennbares Profil zu erhalten.
+
+\vksip 10 pt
+
+\graTwo[0.45]{Bild2Ddiagonal}{Gaussfit-diagonalloru}{Diagonales Profil (links oben nach rechts unten)}
+
+Man erkennt dabei, das auch bei einer Auswahl von nur vergleichsweise sehr gut erkennbaren Atomen das Profil deutlich schlechter ist, als beim Durchlegen einer horizontalen Linie.
+Da sich bei der Auswertung des horizontalen Profils gezeigt hat, dass das Auswerten vom ersten und letzten Peak zu Berechnung des atomaren Abstandes ausreicht, werden hier nur diese aufgeführt.
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c|c|c}
+		Peak & A & $\mu$ & $\sigma$ \\ \hline
+		Peak 1 & $(203 \pm 36000 )nm$ & $(155 \pm 7)pm$ & $(13.6\pm13000) pm$\\
+		Peak 5 & $(815.65 \pm 0.15 )pm$ & $(1267 \pm 4)pm$ & $(739.8\pm6800) pm$\\
+	\end{tabular}
+	\caption{Gauß-Peaks des diagonalen (links oben - rechts unten) Profils \label{GT1}}
+\end{table}
+
+
+\paragraph{Diagonales Profil (rechts oben nach links unten)}
+
+In dieser Richtung entschieden wir uns für eine Linie mit lediglich vier Peaks, dies vereinfacht das Identifizieren der Atome im ausgelesenen Profil und wählen der passenden Fitbereiche.
+
+\graTwo[0.45]{Bild2Ddiagonal2}{Gaussfit-alle-diagonal2}{Diagonales Profil (rechts oben nach links unten)}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c|c|c}
+		Peak & A & $\mu$ & $\sigma$ \\ \hline
+		Peak 1 & $(131 \pm 570 )pm$ & $(107 \pm 3)pm$ & $(227\pm530) pm$\\
+		Peak 4 & $(18 \pm 2 )pm$ & $(720 \pm 3)pm$ & $(40\pm7) pm$\\
+	\end{tabular}
+	\caption{Gauß-Peaks des diagonalen (links oben - rechts unten) Profils \label{GT2}}
+\end{table}
 
 \subsection{Molybdändisulfid}
 
